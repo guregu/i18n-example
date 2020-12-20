@@ -1,0 +1,2 @@
+This is example code for how to use html/template together with go-i18n to achieve localization for server-side rendering.
+See [my article on Qiita](https://qiita.com/guregu/items/89b46ba061d239333717) [Japanese].
