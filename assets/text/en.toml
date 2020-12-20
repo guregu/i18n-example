@@ -1,5 +1,8 @@
+time_layout = "Jan 2 2006 3:04PM"
+
 greeting = "hello world"
 server_os = "The server's OS is {{.v0}}."
+current_time = "The current time is {{.v0}}."
 
 [accesses]
 one = "This page has been accessed {{.ct}} time."

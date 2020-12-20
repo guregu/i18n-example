@@ -1,3 +1,6 @@
+time_layout = "2006年1月2日 15時04分"
+
 greeting = "こんにちは、世界"
 server_os = "サーバーのOSは{{.v0}}です。"
+current_time = "ただいまの時間は{{.v0}}です。"
 accesses = "あなたは{{.ct}}番目のお客様なのです☆"

@@ -4,6 +4,9 @@ import (
 	"context"
 	"html/template"
 	"path/filepath"
+	"time"
+
+	"github.com/nicksnyder/go-i18n/v2/i18n"
 )
 
 var templates *template.Template
@@ -27,10 +30,15 @@ func templateFuncs(ctx context.Context) template.FuncMap {
 	if !ok {
 		localizer = defaultLocalizer
 	}
+	// TODO: check error
+	timeLayout, _, _ := localizer.LocalizeWithTag(&i18n.LocalizeConfig{MessageID: "time_layout"})
 
 	return template.FuncMap{
 		"t":  translateFunc(localizer),
 		"tc": translateCountFunc(localizer),
+		"time": func(t time.Time) string {
+			return t.Format(timeLayout)
+		},
 	}
 }
 
