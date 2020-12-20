@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+	<head>
+		<title>i18n test page</title>
+	</head>
+	<body>
+		<header>
+			<nav>{{t "lang"}}: 
+				<a href="?lang=en">{{t "lang_en"}}</a> 
+				<a href="?lang=ja">{{t "lang_ja"}}</a>
+			</nav>
+		</header>
+		<h2>{{t "greeting"}}</h2>
+		<p>{{t "server_os" $.OS}}
+		<p>{{t "wabisabi"}}</p>
+		<p>{{t "current_time" ($.Now | time)}}</p>
+		<footer>{{tc "accesses" $.AccessCount}}</footer>
+	</body>
+</html>
