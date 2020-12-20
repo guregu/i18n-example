@@ -13,6 +13,9 @@ func personalize(next http.Handler) http.Handler {
 	fn := func(w http.ResponseWriter, r *http.Request) {
 		ctx := r.Context()
 		acceptLang := r.Header.Get("Accept-Language")
+		if q := r.URL.Query().Get("lang"); q != "" {
+			acceptLang = q
+		}
 		localizer := i18n.NewLocalizer(translations, acceptLang)
 		ctx = withLocalizer(ctx, localizer)
 		r = r.WithContext(ctx)
